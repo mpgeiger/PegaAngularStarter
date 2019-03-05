@@ -5,6 +5,10 @@
       <mat-icon >menu</mat-icon>
     </button>
     <mat-icon style="padding: 0px 10px 0px 20px;">home</mat-icon>PegaApp
+    <button mat-button routerLink="/mpg-layout" >MPG Layout</button>
+    <button mat-button>Accounts</button>
+    <button mat-button>Accounts2</button>
+
     <span class="toolbar-spacer"> </span>
     <button mat-button>v 1.14</button>
     <button mat-button [matMenuTriggerFor]="userMenu" *ngIf="bLoggedIn == true">{{userName$}}

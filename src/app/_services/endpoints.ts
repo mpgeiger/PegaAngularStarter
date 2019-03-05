@@ -1,6 +1,6 @@
 export const endpoints = {
   // Change this URL if you want to point the React application at another Pega server.
-  BASEURL: "http://localhost:8080/prweb/api/v1",
+  BASEURL: "http://172.17.130.3:9080/prweb/api/v1",
   AUTH: "/authenticate",
   CASES: "/cases",
   CASETYPES: "/casetypes",

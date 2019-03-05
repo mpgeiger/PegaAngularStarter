@@ -6,7 +6,7 @@
   <mat-card-content>
       <form class="pega-login-form" (submit)=doLogin()>
           <mat-form-field class="pega-login-full-width">
-            <input matInput placeholder="User Name" id="userName" type="text" [formControl]="pxTextInputControl" (change)="fieldChanged($event)">
+            <input matInput placeholder="User Name" id="userName" type="text" [formControl]="pxTextInputControl" (change)="fieldChanged($event)"  [(ngModel)]="userName">
           </mat-form-field>
       </form>
       <form class="pega-login-form" (submit)=doLogin()>

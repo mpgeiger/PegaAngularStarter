@@ -72,6 +72,8 @@ import { SafeHtmlPipe } from './_pipe/safehtml.pipe';
 import { RecentlistComponent } from './_subcomponents/recentlist/recentlist.component';
 import { NumberComponent } from './_fieldcomponents/number/number.component';
 import { NosupportComponent } from './_fieldcomponents/nosupport/nosupport.component';
+import { AccountsComponent } from './accounts/accounts.component';
+import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
 
 
 
@@ -114,7 +116,9 @@ import { NosupportComponent } from './_fieldcomponents/nosupport/nosupport.compo
     SafeHtmlPipe,
     RecentlistComponent,
     NumberComponent,
-    NosupportComponent
+    NosupportComponent,
+    AccountsComponent,
+    MPGLayoutComponent
   ],
 
   imports: [
