@@ -1,22 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, 
-  MatCheckboxModule, 
+import { MatButtonModule,
+  MatCheckboxModule,
   MatFormFieldModule,
   MatInputModule,
-  MatToolbarModule, 
-  MatSidenavModule, 
-  MatIconModule, 
-  MatListModule, 
-  MatGridListModule, 
-  MatCardModule, 
-  MatMenuModule, 
-  MatTableModule, 
-  MatPaginatorModule, 
-  MatSortModule, 
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule,
+  MatGridListModule,
+  MatCardModule,
+  MatMenuModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
   MatSelectModule,
   MatTabsModule,
   MatExpansionModule,
@@ -24,9 +25,9 @@ import { MatButtonModule,
   MatSnackBarModule,
   MatProgressSpinnerModule,
   MatDatepickerModule,
-  MatNativeDateModule, 
+  MatNativeDateModule,
   MatRadioModule,
-  MatAutocompleteModule, 
+  MatAutocompleteModule,
   MatTooltipModule
 
  } from '@angular/material';
@@ -74,12 +75,14 @@ import { NumberComponent } from './_fieldcomponents/number/number.component';
 import { NosupportComponent } from './_fieldcomponents/nosupport/nosupport.component';
 import { AccountsComponent } from './accounts/accounts.component';
 import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
-
+import { CardComponent } from './card/card.component';
+//import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    // CardComponent,
     WorklistComponent,
     NavigationComponent,
     MaintabsComponent,
@@ -118,11 +121,14 @@ import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
     NumberComponent,
     NosupportComponent,
     AccountsComponent,
-    MPGLayoutComponent
+    MPGLayoutComponent,
+    CardComponent
+    // ,    WorklistpanelsectionComponent
   ],
 
   imports: [
     BrowserModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
@@ -145,7 +151,7 @@ import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
     MatSortModule,
     MatSelectModule,
     MatTabsModule,
-    MatExpansionModule, 
+    MatExpansionModule,
     MatSnackBarModule,
     MatProgressSpinnerModule,
     MatDatepickerModule,

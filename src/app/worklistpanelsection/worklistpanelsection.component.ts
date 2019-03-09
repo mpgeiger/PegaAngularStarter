@@ -12,9 +12,9 @@ import { OpenRecentService } from '../_messages/openrecent.service';
 import { GetRecentService } from '../_messages/getrecent.service';
 
 @Component({
-  selector: 'app-maintabs',
-  templateUrl: './maintabs.component.html',
-  styleUrls: ['./maintabs.component.scss']
+  selector: 'app-worklistpanelsection',
+  templateUrl: './worklistpanelsection.component.html',
+  styleUrls: ['./worklistpanelsection.component.scss']
 })
 
 
@@ -27,7 +27,7 @@ import { GetRecentService } from '../_messages/getrecent.service';
 //
 
 
-export class MaintabsComponent implements OnInit {
+export class WorklistpanelsectionComponent implements OnInit {
 
   message: any;
   subscription: Subscription;
