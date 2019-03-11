@@ -4,12 +4,16 @@
   fxLayoutGap="32px"
   fxLayoutAlign="flex-start"
 >
-
+aaa
+<app-worklist>bbb</app-worklist>
+ccc
 <ng-container *ngFor="let cards of [1,2,3,4,5,6] ; let i = index;">
     <app-card
       fxFlex="0 1 calc(33.3% - 32px)"
       fxFlex.lt-md="0 1 calc(50% - 32px)"
       fxFlex.lt-sm="100%"
+      cardHeadline = "this is my header"
+      cardSubHeadline = "this is my sub-header"
       cardName = "foobar"
       cardIndex = {{i}}
     ></app-card>

@@ -76,7 +76,7 @@ import { NosupportComponent } from './_fieldcomponents/nosupport/nosupport.compo
 import { AccountsComponent } from './accounts/accounts.component';
 import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
 import { CardComponent } from './card/card.component';
-//import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
+// import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
 
 @NgModule({
