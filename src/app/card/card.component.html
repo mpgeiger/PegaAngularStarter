@@ -9,15 +9,12 @@
 <mat-card mat-theme-watch>
 
     <mat-card-title-group>
-      <mat-card-title>{{cardHeadline}}--headline</mat-card-title>
-      <mat-card-subtitle>{{cardSubHeadline}}--subhead</mat-card-subtitle>
+      <mat-card-title>{{cardHeadline}}</mat-card-title>
+      <mat-card-subtitle *ngIf="cardSubHeadline!==''" >{{cardSubHeadline}}</mat-card-subtitle>
     </mat-card-title-group>
 
   <mat-card-content>
-    <p>
-      The titles of Washed Out's breakthrough song and the first single from Paracosm share the
-      two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
-    </p>
+
     <app-worklist>bbb</app-worklist>
     </mat-card-content>
   <mat-card-actions layout="row" layout-align="end center">

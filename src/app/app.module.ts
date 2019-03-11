@@ -76,6 +76,9 @@ import { NosupportComponent } from './_fieldcomponents/nosupport/nosupport.compo
 import { AccountsComponent } from './accounts/accounts.component';
 import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
 import { CardComponent } from './card/card.component';
+import { HomeTabComponent } from './home-tab/home-tab.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
 
@@ -122,7 +125,10 @@ import { CardComponent } from './card/card.component';
     NosupportComponent,
     AccountsComponent,
     MPGLayoutComponent,
-    CardComponent
+    CardComponent,
+    HomeTabComponent,
+    HeaderComponent,
+    FooterComponent
     // ,    WorklistpanelsectionComponent
   ],
 

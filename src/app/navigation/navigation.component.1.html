@@ -26,25 +26,26 @@
   </mat-toolbar-row>
 </mat-toolbar>
 end - mat-toolbar
-<mat-sidenav-container class="example-container">
-    <mat-sidenav #drawer mode="side" opened role="navigation">
-        <button style="position:absolute; height: 0px;" mat-button></button>
-        <!-- end dummy-->
-            <app-createcaselist (click)="drawer.close()" ></app-createcaselist>
-            <mat-list>
-              <mat-divider></mat-divider>
-              <mat-list-item>
-                <button mat-menu-item (click)="drawer.close();getNextWork()">Get Next Work</button>
-              </mat-list-item>
-              <mat-divider></mat-divider>
-              <mat-list-item><mat-icon>history</mat-icon> Recents</mat-list-item>
-              <app-recentlist (click)="drawer.close()"></app-recentlist>
-              <mat-divider></mat-divider>
-            </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+<mat-drawer-container class="example-container" hasBackdrop="false">
+  <mat-drawer #drawer side>
+      <!-- dummy button, so first button isn't highlighted, this will be hidden-->
+      <button style="position:absolute; height: 0px;" mat-button></button>
+      <!-- end dummy-->
+          <app-createcaselist (click)="drawer.close()" ></app-createcaselist>
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+              <button mat-menu-item (click)="drawer.close();getNextWork()">Get Next Work</button>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item><mat-icon>history</mat-icon> Recents</mat-list-item>
+            <app-recentlist (click)="drawer.close()"></app-recentlist>
+            <mat-divider></mat-divider>
+          </mat-list>
+  </mat-drawer>
+  <mat-drawer-content>
+     <app-maintabs *ngIf="bLoggedIn == true"></app-maintabs>
+  </mat-drawer-content>
+</mat-drawer-container>
 <app-login *ngIf="bLoggedIn == false"></app-login>
 

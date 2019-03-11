@@ -1,0 +1,8 @@
+body, html, app-root {
+  height: 100%;
+}
+
+app-root{
+  display: flex;
+  flex-flow: column;
+}
