@@ -1,20 +1,46 @@
 <div
-  fxLayout="row wrap"
+fxFlex
+  fxLayout="row"
   fxLayout.lt-sm="column"
   fxLayoutGap="32px"
-  fxLayoutAlign="flex-start"
+  fxLayoutAlign="pace-around start"
 >
-<!-- <app-worklist></app-worklist> -->
+<!-- <mat-row></mat-row> -->
+  <!-- <app-worklist></app-worklist> -->
 
-<ng-container *ngFor="let cards of [1,2,3] ; let i = index;">
+<!-- <ng-container>
+    <app-card fxFlex="66" cardHeadline="MPG Recent Requests">
+        <app-worklist></app-worklist>
+    </app-card>
+</ng-container> -->
+<mat-card fxFlex="33" class='pgCard'>
+    <mat-card-title>Account Status</mat-card-title>
+      <mat-card-content >
+          <p class="row align-items-center">
+              <i class="material-icons green">
+                  mood
+                  </i> Overall account status
+          </p>
+      </mat-card-content>
+    </mat-card>
+
+<mat-card  class='pgCard'>
+  <mat-card-title>Recent Requests</mat-card-title>
+    <mat-card-content>
+        <app-worklist></app-worklist>
+    </mat-card-content>
+  </mat-card>
+
+<!--
+  <ng-container *ngFor="let cards of [1, 2, 3]; let i = index">
     <app-card
       fxFlex="0 1 calc(33.3% - 32px)"
       fxFlex.lt-md="0 1 calc(50% - 32px)"
       fxFlex.lt-sm="100%"
-      cardHeadline = "Recent Requests"
-      cardSubHeadline = "this is my sub-header"
-      cardName = "foobar"
-      cardIndex = {{i}}
+      cardHeadline="Recent Requests"
+      cardSubHeadline=""
+      cardName="foobar"
+      cardIndex="{{ i }}"
     ></app-card>
-  </ng-container>
+  </ng-container> -->
 </div>

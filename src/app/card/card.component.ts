@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-
+import { Component, Input, OnInit } from "@angular/core";
 
 // @Component({
 //   selector: 'app-card',
@@ -16,22 +15,29 @@ import { Component, Input, OnInit } from '@angular/core';
 // }
 
 @Component({
-  selector: 'app-card',
+  selector: "app-card",
   // template: `<div>Card: {{cardName}} {{cardIndex}} </div>`,
-  templateUrl: './card.component.html',
-  styles: [`
-  :host {
-    display: block;
-    padding: 12px;
-    border: 1px solid black;
-    border-radius: 8px;
-  }
-  `]
+  templateUrl: "./card.component.html",
+  styles: [
+    `
+      :host {
+        display: block;
+        padding: 12px;
+        border: 1px solid black;
+        border-radius: 8px;
+      }
+    `
+  ]
 })
-export class CardComponent {
- @Input() cardHeadline: string;
- @Input() cardSubHeadline: string;
- @Input() cardName: string;
- @Input() cardIndex: string;
-//  @Input() foo : bigint
+export class CardComponent implements OnInit {
+  @Input() cardHeadline: string;
+  @Input() cardSubHeadline: string;
+  @Input() cardName: string;
+  @Input() cardIndex: string;
+  //  @Input() foo : bigint
+
+  ngOnInit() {
+    if (localStorage.getItem("userName")) {
+    }
+  }
 }

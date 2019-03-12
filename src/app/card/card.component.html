@@ -1,22 +1,13 @@
-<!-- <p>
-  card works!
-</p>
-<mat-card-title-text>
-  <span class="mat-headline">Card with image</span>
-  <span class="mat-subhead">Large</span>
-</mat-card-title-text> -->
-
 <mat-card mat-theme-watch>
-
-    <mat-card-title-group>
-      <mat-card-title>{{cardHeadline}}</mat-card-title>
-      <mat-card-subtitle *ngIf="cardSubHeadline!==''" >{{cardSubHeadline}}</mat-card-subtitle>
-    </mat-card-title-group>
-
+  <mat-card-title-group>
+    <mat-card-title>{{ cardHeadline }}</mat-card-title>
+    <mat-card-subtitle *ngIf="cardSubHeadline !== ''">{{
+      cardSubHeadline
+    }}</mat-card-subtitle>
+  </mat-card-title-group>
   <mat-card-content>
-
-    <app-worklist>bbb</app-worklist>
-    </mat-card-content>
+    <!-- <app-worklist></app-worklist> -->
+  </mat-card-content>
   <mat-card-actions layout="row" layout-align="end center">
     <!-- <mat-button>Action 1</mat-button>
     <mat-button>Action 2</mat-button> -->

@@ -17,12 +17,30 @@
       href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css"
     />
     <meta name="viewport" content="initial-scale=1" />
-    <!-- <script src ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb/PRChat?pyActivity=pzIncludeMashupScripts'></script>
-    <script src ='PegaHelper.js'></script>
-    <script src ='PegaHelperExtension.js'></script> -->
+    <script src="./assets/PegaWebChat/PegaHelper.js">
+    </script>
+<script src="./assets/PegaWebChat/PegaHelperExtension.js">
+</script>
+<link rel="stylesheet" type="text/css" href="./assets/PegaWebChat/PegaStyles.css" >
+
   </head>
   <body>
     <app-root>app-root</app-root>
+    <!-- ********************** Begin Pega content ********************** -->
+    <script src ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb?pyActivity=pzIncludeMashupScripts'></script>
+    <div data-pega-gadgetname ='PegaGadget'
+    data-pega-action ='createNewWork'
+    data-pega-action-param-classname ='Work-Channel-Chat'
+    data-pega-action-param-flowname ='pyStartCase'
+    data-pega-isdeferloaded ='false'
+    data-pega-applicationname ='PegaCSFSSample'
+    data-pega-threadname ='STANDARD'
+    data-pega-resizetype ='stretch'
+    data-pega-url ='https://end2endcrmcommercialbanking.pegatsdemo.com/prweb/PRChat'
+    data-pega-redirectguests ='false'
+    data-pega-action-param-parameters ='{"channelId":"botfb9b5dd7355044febfefe5dace5e3ea8"}' ></div>
+
+<!-- ********************** End Pega content ********************** -->
   </body>
   <!-- ********************** Begin Pega content ********************** -->
 
@@ -38,4 +56,6 @@
       document.head.appendChild(script);
     })();
   </script>
+
+
 </html>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { CardComponent } from '../card/card.component';
+import { Component,  OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-accounts',

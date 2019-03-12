@@ -1,8 +1,8 @@
-<mat-toolbar color="primary">
+<mat-toolbar >
   <mat-toolbar-row>
     <div class="navbar-brand">
       <a class="navbar-item">
-        <img src="../../assets/img/ubs_225x85.jpg" height="45px" />
+        <img src="../../assets/img/BNY_Logo_128x128.png" height="45px" />
       </a>
     </div>
     <button mat-icon-button (click)="drawer.toggle()" *ngIf="bLoggedIn == true">
@@ -36,7 +36,7 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #drawer mode="side" closed role="navigation">
     <button style="position:absolute; height: 0px;" mat-button></button>
-    <!-- end dummy-->
+
     <app-createcaselist (click)="drawer.close()"></app-createcaselist>
     <mat-list>
       <mat-divider></mat-divider>
@@ -55,7 +55,6 @@
     <app-login *ngIf="bLoggedIn == false"></app-login>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
-  post mat-sidenav-content
+
 </mat-sidenav-container>
-post mat-sidenav-container
 <!-- <app-login *ngIf="bLoggedIn == false"></app-login> -->

@@ -79,6 +79,7 @@ import { CardComponent } from './card/card.component';
 import { HomeTabComponent } from './home-tab/home-tab.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ChartBarComponent } from './chart-bar/chart-bar.component';
 // import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
 
