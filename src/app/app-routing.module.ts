@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeTabComponent } from './home-tab/home-tab.component';
+import { MaintabsComponent } from './maintabs/maintabs.component';
 import { WorklistComponent } from './worklist/worklist.component';
 import { MPGLayoutComponent } from './mpg-layout/mpg-layout.component';
 import { AccountsComponent } from './accounts/accounts.component';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'data',
     component: WorklistComponent,
+  },
+  {
+    path: 'maintabs',
+    component: MaintabsComponent,
   },
   {
     path: 'hometab',

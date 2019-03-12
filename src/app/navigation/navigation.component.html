@@ -1,50 +1,61 @@
-
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-      <div class="navbar-brand">
-          <a class="navbar-item">
-            <img src="../../assets/img/ubs_225x85.jpg" height='45px'>
-          </a>
-        </div>
+    <div class="navbar-brand">
+      <a class="navbar-item">
+        <img src="../../assets/img/ubs_225x85.jpg" height="45px" />
+      </a>
+    </div>
     <button mat-icon-button (click)="drawer.toggle()" *ngIf="bLoggedIn == true">
-      <mat-icon >menu</mat-icon>
+      <mat-icon>menu</mat-icon>
     </button>
 
-    <button mat-button routerLink="/" ><mat-icon style="padding: 0px 10px 0px 20px;">home</mat-icon>MPG Dash</button>
-    <button mat-button routerLink="/hometab" >Home</button>
+    <button mat-button routerLink="/maintabs">
+      <mat-icon style="padding: 0px 10px 0px 20px;">home</mat-icon>MPG Dash
+    </button>
+    <button mat-button routerLink="/hometab" *ngIf="bLoggedIn == true">
+      Home
+    </button>
 
-    <button mat-button routerLink="/mpg-layout" >MPG Layout</button>
-    <button mat-button routerLink="/accounts">Accounts</button>
+    <button mat-button routerLink="/mpg-layout" *ngIf="bLoggedIn == true">
+      MPG Layout
+    </button>
+    <button mat-button routerLink="/accounts" *ngIf="bLoggedIn == true">
+      Accounts
+    </button>
     <span class="toolbar-spacer"> </span>
     <button mat-button>v 1.14</button>
-    <button mat-button [matMenuTriggerFor]="userMenu" *ngIf="bLoggedIn == true">{{userName$}}
+    <button mat-button [matMenuTriggerFor]="userMenu" *ngIf="bLoggedIn == true">
+      {{ userName$ }}
       <mat-icon>arrow_drop_down</mat-icon>
     </button>
     <mat-menu #userMenu="matMenu" overlapTrigger="false">
-      <button mat-menu-item (click)=logOff()>Log off</button>
+      <button mat-menu-item (click)="logOff()">Log off</button>
     </mat-menu>
   </mat-toolbar-row>
 </mat-toolbar>
-end - mat-toolbar
 <mat-sidenav-container class="example-container">
-    <mat-sidenav #drawer mode="side" opened role="navigation">
-        <button style="position:absolute; height: 0px;" mat-button></button>
-        <!-- end dummy-->
-            <app-createcaselist (click)="drawer.close()" ></app-createcaselist>
-            <mat-list>
-              <mat-divider></mat-divider>
-              <mat-list-item>
-                <button mat-menu-item (click)="drawer.close();getNextWork()">Get Next Work</button>
-              </mat-list-item>
-              <mat-divider></mat-divider>
-              <mat-list-item><mat-icon>history</mat-icon> Recents</mat-list-item>
-              <app-recentlist (click)="drawer.close()"></app-recentlist>
-              <mat-divider></mat-divider>
-            </mat-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-<app-login *ngIf="bLoggedIn == false"></app-login>
-
+  <mat-sidenav #drawer mode="side" closed role="navigation">
+    <button style="position:absolute; height: 0px;" mat-button></button>
+    <!-- end dummy-->
+    <app-createcaselist (click)="drawer.close()"></app-createcaselist>
+    <mat-list>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <button mat-menu-item (click)="drawer.close(); getNextWork()">
+          Get Next Work
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item><mat-icon>history</mat-icon> Recents</mat-list-item>
+      <app-recentlist (click)="drawer.close()"></app-recentlist>
+      <mat-divider></mat-divider>
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-login *ngIf="bLoggedIn == false"></app-login>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  post mat-sidenav-content
+</mat-sidenav-container>
+post mat-sidenav-container
+<!-- <app-login *ngIf="bLoggedIn == false"></app-login> -->

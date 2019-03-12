@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
 
 
-  @Input() userName = 'tech.cableco';
-  @Input() userPassword = 'pega';
+  // @Input() userName = 'sallyjones';
+  // @Input() userPassword = 'install';
 
 
   constructor(private uservice: UserService,
