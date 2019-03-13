@@ -26,13 +26,13 @@ export class UserService {
     authHeaders = authHeaders.append('Authorization', 'Basic ' + encodedUser);
     authHeaders = authHeaders.append('Access-Control-Allow-Origin', '*');
     authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
-    authHeaders = authHeaders.append('Origin', '*');
+    // authHeaders = authHeaders.append('Origin', '*');
 
     localStorage.setItem("userName", userName);
     localStorage.setItem("encodedUser", encodedUser);
 
 
-    return this.http.get(this.authUrl + "/maintabs",
+    return this.http.get(this.authUrl + "/",
       { observe: 'response', params: authParams, headers: authHeaders});
 
 
