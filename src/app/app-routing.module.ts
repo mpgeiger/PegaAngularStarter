@@ -14,6 +14,10 @@ const routes: Routes = [
     component: WorklistComponent,
   },
   {
+    path: '',
+    component: MaintabsComponent,
+  },
+  {
     path: 'maintabs',
     component: MaintabsComponent,
   },
