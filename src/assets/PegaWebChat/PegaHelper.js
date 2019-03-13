@@ -82,8 +82,8 @@ var textFontFamily = "";
 
 function postMessageListener(event){
 
-  /* console.log("origin is ",event.origin);
-  console.log("received: "+event.data); */
+   console.log("origin is ",event.origin);
+  console.log("received: "+event.data);
 
   try {
 	var message = JSON.parse(event.data);
@@ -91,7 +91,7 @@ function postMessageListener(event){
     console.log("Error parsing posted message: " + e.message);
 	return;
   }
-  /* console.log("message is ", message); */
+  console.log("message is ", message);
 
   if (message.message) {
     if ((message.message.payload.name == "loaded" ||message.message.payload.name == "confirm") && message.message.src == "OnlineHelpIfr") {
