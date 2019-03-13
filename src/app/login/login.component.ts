@@ -63,6 +63,7 @@ export class LoginComponent implements OnInit {
               localStorage.setItem('userWorkBaskets', JSON.stringify(operator.pyWorkBasketList));
 
               this.glsservice.sendMessage('LoggedIn');
+              // this.router.navigate(["maintabs"]);
             },
             err => {
               let sError = 'Errors getting data page: ' + err.message;
