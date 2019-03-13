@@ -12,7 +12,7 @@ export class UserService {
   authUrl = endpoints.BASEURL + endpoints.AUTH;
 
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
 
 
   }
@@ -24,13 +24,16 @@ export class UserService {
     var authParams = new HttpParams();
     var authHeaders = new HttpHeaders();
     authHeaders = authHeaders.append('Authorization', 'Basic ' + encodedUser);
+    authHeaders = authHeaders.append('Access-Control-Allow-Origin', '*');
+    authHeaders = authHeaders.append('Access-Control-Allow-Headers', '*');
+    authHeaders = authHeaders.append('Origin', '*');
 
     localStorage.setItem("userName", userName);
     localStorage.setItem("encodedUser", encodedUser);
 
 
     return this.http.get(this.authUrl + "/",
-      { observe: 'response', params: authParams, headers: authHeaders});     
+      { observe: 'response', params: authParams, headers: authHeaders});
 
 
   }

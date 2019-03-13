@@ -17,10 +17,10 @@ export class RecentlistComponent implements OnInit {
 
   constructor(private glservice: GetLoginStatusService,
               private dpservice: DatapageService,
-              private orservice: OpenRecentService) { 
+              private orservice: OpenRecentService) {
 
     // if we have a user, get casetypes
-    if (localStorage.getItem("userName")) {
+    if (localStorage.getItem('userName')) {
       this.updateRecentList();
     }
 
@@ -42,21 +42,21 @@ export class RecentlistComponent implements OnInit {
 
 
   updateRecentList() {
-    this.dpservice.getDataPage("Declare_pxRecents", {'Work' : true, 'Rule' : false}).subscribe(
+    this.dpservice.getDataPage('Declare_pxRecents', {'Work' : true, 'Rule' : false}).subscribe(
       response => {
-        if (response.body["pxResults"]) {
-          this.recentList$ = response.body["pxResults"];
+        if (response.body['pxResults']) {
+          this.recentList$ = response.body['pxResults'];
         }
       },
       err => {
-        alert("Errors from get recentlist:" + err.errors);
+        alert('Errors from get recentlist:' + err.errors);
       }
     );
   }
 
   openRecent(recent: any) {
-    let caseID = recent.pyRecordKey;
-    let caseName = recent.pyRecordID;
+    const caseID = recent.pyRecordKey;
+    const caseName = recent.pyRecordID;
 
     this.orservice.sendMessage(caseName, caseID);
 

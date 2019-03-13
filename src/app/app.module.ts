@@ -79,6 +79,7 @@ import { CardComponent } from './card/card.component';
 import { HomeTabComponent } from './home-tab/home-tab.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { UnifiedtasklistComponent } from './unifiedtasklist/unifiedtasklist.component';
 
 // import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
@@ -129,7 +130,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CardComponent,
     HomeTabComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    UnifiedtasklistComponent
     // ,    WorklistpanelsectionComponent
   ],
 
