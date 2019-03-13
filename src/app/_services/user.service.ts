@@ -32,7 +32,7 @@ export class UserService {
     localStorage.setItem("encodedUser", encodedUser);
 
 
-    return this.http.get(this.authUrl + "/",
+    return this.http.get(this.authUrl + "/maintabs",
       { observe: 'response', params: authParams, headers: authHeaders});
 
 

@@ -28,10 +28,10 @@ export class WorklistComponent implements OnInit {
   subscription: Subscription;
 
   displayedColumns = ['pxRefObjectInsName','pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
- 
 
 
-  constructor(private datapage: DatapageService, 
+
+  constructor(private datapage: DatapageService,
               private oaservice: OpenAssignmentService,
               private rwlservice: RefreshWorkListService) { }
 
@@ -39,7 +39,7 @@ export class WorklistComponent implements OnInit {
 
     this.getWorkList();
 
-    this.subscription = this.rwlservice.getMessage().subscribe(message => { 
+    this.subscription = this.rwlservice.getMessage().subscribe(message => {
       this.message = message;
 
 
@@ -52,7 +52,7 @@ export class WorklistComponent implements OnInit {
       }
     });
 
-    
+
 
   }
 
@@ -71,14 +71,14 @@ export class WorklistComponent implements OnInit {
 
         this.worklist$.paginator = this.paginator;
         this.worklist$.sort = this.sort;
-        
+
       },
       err => {
         alert("Error form worklist:" + err.errors);
       }
     );
 
-    
+
 
   }
 
@@ -97,8 +97,8 @@ export class WorklistComponent implements OnInit {
         alert("Error form workbasket:" + err.errors);
       }
     );
-    
-    
+
+
 
   }
 
