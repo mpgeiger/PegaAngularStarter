@@ -80,8 +80,8 @@ import { HomeTabComponent } from './home-tab/home-tab.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UnifiedtasklistComponent } from './unifiedtasklist/unifiedtasklist.component';
+import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component';
 
-// import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component'
 
 
 @NgModule({
@@ -131,8 +131,8 @@ import { UnifiedtasklistComponent } from './unifiedtasklist/unifiedtasklist.comp
     HomeTabComponent,
     HeaderComponent,
     FooterComponent,
-    UnifiedtasklistComponent
-    // ,    WorklistpanelsectionComponent
+    UnifiedtasklistComponent,
+    WorklistpanelsectionComponent
   ],
 
   imports: [
