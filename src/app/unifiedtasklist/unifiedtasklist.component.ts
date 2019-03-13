@@ -27,7 +27,7 @@ export class UnifiedtasklistComponent implements OnInit {
   message: any;
   subscription: Subscription;
 
-  displayedColumns = ['pxRefObjectInsName','pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
+  displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
 
 
 
@@ -43,11 +43,10 @@ export class UnifiedtasklistComponent implements OnInit {
       this.message = message;
 
 
-      if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === "unifiedtasklist") {
+      if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === 'unifiedtasklist') {
         this.getunifiedtasklist();
 
-      }
-      else {
+      } else {
         // this.getWorkBaskets(this.message.unifiedtasklist);
       }
     });
@@ -66,7 +65,7 @@ export class UnifiedtasklistComponent implements OnInit {
     .set('WorkGroup', 'NewWaveWG');
 
 
-    this.datapage.getDataPage("D_UnifiedWorkList", unifiedtasklistParams).subscribe(
+    this.datapage.getDataPage('D_UnifiedWorkList', unifiedtasklistParams).subscribe(
 
       response => {
         this.unifiedtasklist$ = new MatTableDataSource<any>(this.getResults(response.body));
@@ -77,7 +76,7 @@ export class UnifiedtasklistComponent implements OnInit {
 
       },
       err => {
-        alert("Error form unifiedtasklist:" + err.errors);
+        alert('Error form unifiedtasklist:' + err.errors);
       }
     );
 
