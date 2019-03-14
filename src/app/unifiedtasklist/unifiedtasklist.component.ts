@@ -21,6 +21,9 @@ export class UnifiedtasklistComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   unifiedtasklist$: MatTableDataSource<any>;
+  unifiedtasklistObject$: Array<any> = [];
+  tasks: Array<any> = [];
+
   works$: Object;
   headers: any;
 
@@ -43,12 +46,12 @@ export class UnifiedtasklistComponent implements OnInit {
       this.message = message;
 
 
-      if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === 'unifiedtasklist') {
+     // if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === 'unifiedtasklist') {
         this.getunifiedtasklist();
 
-      } else {
+     // } else {
         // this.getWorkBaskets(this.message.unifiedtasklist);
-      }
+     // }
     });
 
 
@@ -68,8 +71,13 @@ export class UnifiedtasklistComponent implements OnInit {
     this.datapage.getDataPage('D_UnifiedWorkList', unifiedtasklistParams).subscribe(
 
       response => {
+
         this.unifiedtasklist$ = new MatTableDataSource<any>(this.getResults(response.body));
         this.headers = response.headers;
+       // this.unifiedtasklistObject$ = JSON.parse(this.getResults(response.body));
+        this.tasks = Object.keys(this.getResults(response.body)).map(it => this.getResults(response.body)[it]);
+
+        console.log('XXX unifiedtasklistObject-->  ', this.tasks);
 
         this.unifiedtasklist$.paginator = this.paginator;
         this.unifiedtasklist$.sort = this.sort;
@@ -83,7 +91,43 @@ export class UnifiedtasklistComponent implements OnInit {
 
 
   }
+  calcColor(val) {
+    var maxval = 120;
+    var minval = 3;
+    // var val = 100;
+    var moreisgood = true;
 
+    var intnsty = (val - minval) / (maxval - minval);
+    var r, g;
+    if (moreisgood) {
+        if (intnsty > 0.5) {
+            g = 255;
+            r = Math.round(2 * (1 - intnsty) * 255);
+        } else {
+            r = 255;
+            g = Math.round(2 * intnsty * 255);
+        }
+
+    } else { //lessisgood
+        if (intnsty > 0.5) {
+            r = 255;
+            g = Math.round(2 * (1 - intnsty) * 255);
+        } else {
+            g = 255;
+            r = Math.round(2 * intnsty * 255);
+        }
+    }
+    var rgb = "rgb(" + r.toString() + ", " + g.toString() + ", 0)";
+    return "" + rgb + "";
+
+  }
+
+  getMyStyles() {
+    let myStyles = {
+       'color': 'red'
+    };
+    return myStyles;
+}  
 
 
 
@@ -101,4 +145,5 @@ export class UnifiedtasklistComponent implements OnInit {
     this.oaservice.sendMessage(row.pxRefObjectInsName, row);
 
   }
+
 }

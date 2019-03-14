@@ -26,13 +26,25 @@
     </mat-card-content>
   </mat-card>
 
-  <mat-card class="pgCard">
-    <mat-card-title>Recent Requests</mat-card-title>
+
+  <mat-card fxFlex="120" class="pgCard">
+    <mat-card-title>Open Tasks</mat-card-title>
     <mat-card-content>
-      <app-worklist></app-worklist>
+      <app-unifiedtasklist></app-unifiedtasklist>
     </mat-card-content>
   </mat-card>
+</div>
+<div
 
+  fxFlex
+  fxLayout="row"
+>
+  <mat-card class="pgCard">
+      <mat-card-title>Recent Requests</mat-card-title>
+      <mat-card-content>
+        <app-worklist></app-worklist>
+      </mat-card-content>
+    </mat-card>
   <!--
   <ng-container *ngFor="let cards of [1, 2, 3]; let i = index">
     <app-card

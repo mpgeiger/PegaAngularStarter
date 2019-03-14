@@ -1,5 +1,32 @@
-  <div>
-    <table mat-table [dataSource]="unifiedtasklist$" matSort>
+<div>
+  <div *ngFor="let task of tasks">
+    <mat-card class="mat-card">
+      <!-- <mat-card-title>task.pyLabel</mat-card-title> -->
+      <mat-card-content  matTooltip="{{task.TaskType}} - {{task.pxRefObjectInsName}} &#10;  Status -- {{task.pyAssignmentStatus}}">
+        <!-- <div class="column align-items-center"> -->
+        <div fxLayout="row">
+          <div >
+              <i class="material-icons md-18  vertical-align-middle padding-bottom-3" [ngStyle]="{'color':calcColor(task.pxUrgencyAssign)}">
+                  lens
+                  </i>
+          <!-- {{calcColor(task.pxUrgencyAssign)}}--
+            {{ task.pxUrgencyAssign }} -->
+          </div>
+          <div fxLayout="column">
+            <div fxFlex class='text-menu'>{{ task.pyLabel }}</div>
+            <div fxFlex class='text-caption'>{{ task.pxTaskLabel }}</div>
+          </div>
+          <!-- <i class="material-icons green">
+                mood
+              </i>
+              Overall account status -->
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+<!-- <table mat-table [dataSource]="unifiedtasklist$" matSort>
 
       <ng-container matColumnDef="pxRefObjectInsName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Case</th>
@@ -27,13 +54,4 @@
     </table>
 
     <mat-paginator [pageSizeOptions]="[10, 20, 50, 100, 500]" showFirstLastButtons></mat-paginator>
-  </div>
-
-
-
-
-
-
-
-
-
+  -->
