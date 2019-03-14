@@ -14,21 +14,31 @@
         <app-worklist></app-worklist>
     </app-card>
 </ng-container> -->
+
   <mat-card fxFlex="33" class="pgCard">
+    <mat-card-header>
     <mat-card-title>Account Status</mat-card-title>
+
+  </mat-card-header>
     <mat-card-content>
-      <p class="row align-items-center">
+      <div class="row align-items-center">
         <i class="material-icons green">
           mood
         </i>
         Overall account status
-      </p>
+
+        <div class="material-label mdl-badge" data-badge="4">Inbox</div>
+      </div>
     </mat-card-content>
   </mat-card>
+  <!-- <div mat-card-avatar class="material-label mdl-badge" data-badge="4">xxxxxxxxx</div> -->
 
 
   <mat-card fxFlex="120" class="pgCard">
-    <mat-card-title>Open Tasks</mat-card-title>
+    <mat-card-header>
+
+    <mat-card-title>Open Tasks  <mat-icon style="padding: 0px 10px 0px 20px;">home</mat-icon> </mat-card-title>
+  </mat-card-header>
     <mat-card-content>
       <app-unifiedtasklist></app-unifiedtasklist>
     </mat-card-content>

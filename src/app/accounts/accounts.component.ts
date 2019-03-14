@@ -9,7 +9,7 @@ import { Subscription, Observable } from 'rxjs';
   styleUrls: ['./accounts.component.scss']
 })
 export class AccountsComponent implements OnInit {
-  bLoggedIn: boolean = false;
+  bLoggedIn = false;
   userName$: string = '';
   subscription: Subscription;
 
@@ -33,7 +33,7 @@ export class AccountsComponent implements OnInit {
           localStorage.clear();
         }
 
-        //this.cdRef.detectChanges();
+        // this.cdRef.detectChanges();
       }
 
   );

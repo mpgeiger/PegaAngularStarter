@@ -8,3 +8,25 @@
 
 }
 
+
+:host ::ng-deep .material-icons.icon,
+.material-label {
+  font-size: 1em;
+  line-height: 1;
+  display: block;
+  color: #424242;
+  margin: .5em 0
+}
+
+
+:host ::ng-deep .material-icons.mdl-badge[data-badge]::after,
+.material-label.mdl-badge[data-badge]::after{
+  font-size: .3em;
+  width: 2em;
+  height: 2em;
+}
+
+:host ::ng-deep .material-icons.mdl-badge[data-badge]::after {
+  top: -1em;
+  right: -1em;
+}
