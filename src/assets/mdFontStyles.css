@@ -111,14 +111,14 @@
 
 body {
   margin: 0 auto;
-  background: #e8eaf6;
-  max-width: 1024px;
+  /* background: #e8eaf6;
+  max-width: 1024px; */
 }
 
 .container {
-  max-width: 800px;
+  /* max-width: 800px;
   margin: 0 auto;
-  padding: 48px 8%;
+  padding: 48px 8%; */
 }
 
 h1, h2, h3, h4 {

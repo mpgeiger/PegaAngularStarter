@@ -18,7 +18,7 @@
 </div> -->
 <!-- </div> -->
 <!-- <divlex class="container"> -->
-<div fxLayout="row">
+<div fxLayout="row" *ngIf="bLoggedIn == true">
   <div flex>
     <img
       src="https://dummyimage.com/200x60/00ff1e/000000.png&text=KPI+Placeholder"
@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<div  fxlayout="column">
+<div  fxlayout="column" *ngIf="bLoggedIn == true">
 
   <div></div>
 

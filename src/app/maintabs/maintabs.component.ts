@@ -10,6 +10,7 @@ import { GetNewCaseService } from '../_messages/getnewcase.service';
 import { RenameTabService } from '../_messages/renametab.service';
 import { OpenRecentService } from '../_messages/openrecent.service';
 import { GetRecentService } from '../_messages/getrecent.service';
+import { GetLoginStatusService } from '../_messages/getloginstatus.service';
 
 @Component({
   selector: 'app-maintabs',
@@ -28,6 +29,8 @@ import { GetRecentService } from '../_messages/getrecent.service';
 
 
 export class MaintabsComponent implements OnInit {
+  bLoggedIn: boolean = false;
+  userName$: string = '';
 
   message: any;
   subscription: Subscription;
@@ -53,7 +56,8 @@ export class MaintabsComponent implements OnInit {
               private gncService: GetNewCaseService,
               private rtService: RenameTabService,
               private orService: OpenRecentService,
-              private grService: GetRecentService ) {
+              private grService: GetRecentService,
+              private glsservice: GetLoginStatusService ) {
 
     this.subscription = this.oaService.getMessage().subscribe(message => {
 
@@ -102,6 +106,30 @@ export class MaintabsComponent implements OnInit {
 
 
   ngOnInit() {
+
+    if (localStorage.getItem('userName')) {
+      // if have a userName, then have already logged in
+      this.bLoggedIn = true;
+
+      this.userName$ = localStorage.getItem('userFullName');
+    }
+
+
+    this.subscription = this.glsservice.getMessage().subscribe(
+        message => {
+          if (message.loginStatus === 'LoggedIn') {
+            this.bLoggedIn = true;
+            this.userName$ = localStorage.getItem('userFullName');
+          } else {
+            this.bLoggedIn = false;
+            localStorage.clear();
+          }
+
+          this.cdRef.detectChanges();
+        }
+
+    );
+
   }
 
   ngOnDestroy() {
