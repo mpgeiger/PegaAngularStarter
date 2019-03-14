@@ -125,7 +125,7 @@ export class MaintabsComponent implements OnInit {
             localStorage.clear();
           }
 
-          this.cdRef.detectChanges();
+          //this.cdRef.detectChanges();
         }
 
     );
