@@ -2,19 +2,24 @@
   <div *ngFor="let task of tasks">
     <mat-card class="mat-card">
       <!-- <mat-card-title>task.pyLabel</mat-card-title> -->
-      <mat-card-content  matTooltip="{{task.TaskType}} - {{task.pxRefObjectInsName}} &#10;  Status -- {{task.pyAssignmentStatus}}">
+      <mat-card-content >
         <!-- <div class="column align-items-center"> -->
-        <div fxLayout="row">
-          <div >
+        <div fxLayout="row" fxLayoutAlign="start center">
+          <div fxFlex="36px"  matTooltip="{{task.pyAssignmentStatus}} -- Ugency-> {{task.pxUrgencyAssign}}"  >
               <i class="material-icons md-18  vertical-align-middle padding-bottom-3" [ngStyle]="{'color':calcColor(task.pxUrgencyAssign)}">
                   lens
                   </i>
           <!-- {{calcColor(task.pxUrgencyAssign)}}--
             {{ task.pxUrgencyAssign }} -->
           </div>
-          <div fxLayout="column">
+          <div fxFlex="75" fxLayoutAlign="start center" >
+          <div fxLayout="column"  matTooltip="{{task.TaskType}} - {{task.pxRefObjectInsName}} &#10;  Status -- {{task.pyAssignmentStatus}}" >
             <div fxFlex class='text-menu'>{{ task.pyLabel }}</div>
             <div fxFlex class='text-caption'>{{ task.pxTaskLabel }}</div>
+          </div>
+        </div>
+          <div fxLayout="row"  fxLayoutAlign="end">
+            {{task.pyAssignmentStatus}}
           </div>
           <!-- <i class="material-icons green">
                 mood

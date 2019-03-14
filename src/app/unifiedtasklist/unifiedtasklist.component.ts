@@ -95,7 +95,7 @@ export class UnifiedtasklistComponent implements OnInit {
     var maxval = 120;
     var minval = 3;
     // var val = 100;
-    var moreisgood = true;
+    var moreisgood = false;
 
     var intnsty = (val - minval) / (maxval - minval);
     var r, g;
@@ -127,7 +127,7 @@ export class UnifiedtasklistComponent implements OnInit {
        'color': 'red'
     };
     return myStyles;
-}  
+}
 
 
 
