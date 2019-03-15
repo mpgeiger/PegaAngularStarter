@@ -83,7 +83,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UnifiedtasklistComponent } from './unifiedtasklist/unifiedtasklist.component';
 import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component';
-
+import { PagerService } from './_services/index';
 
 
 
@@ -178,7 +178,9 @@ import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpa
     MatButtonModule,
     MatButtonModule
   ],
-  providers: [{provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'auto'}}],
+  providers: [
+    PagerService,
+    {provide: MAT_LABEL_GLOBAL_OPTIONS, useValue: {float: 'auto'}}],
   bootstrap: [AppComponent]
 })
 

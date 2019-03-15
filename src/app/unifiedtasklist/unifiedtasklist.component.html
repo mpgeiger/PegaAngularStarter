@@ -1,68 +1,112 @@
-<div>
+<!-- <div>
   <div *ngFor="let task of tasks">
     <mat-card class="mat-card">
-      <!-- <mat-card-title>task.pyLabel</mat-card-title> -->
-      <mat-card-content >
-        <!-- <div class="column align-items-center"> -->
+      <mat-card-content>
         <div fxLayout="row" fxLayoutAlign="start center">
-          <div fxFlex="36px"  matTooltip="{{task.pyAssignmentStatus}} -- Ugency-> {{task.pxUrgencyAssign}}"  >
-              <i class="material-icons md-18  vertical-align-middle padding-bottom-3" [ngStyle]="{'color':calcColor(task.pxUrgencyAssign)}">
-                  lens
-                  </i>
-          <!-- {{calcColor(task.pxUrgencyAssign)}}--
-            {{ task.pxUrgencyAssign }} -->
+          <div
+            fxFlex="36px"
+            matTooltip="{{ task.pyAssignmentStatus }} -- Ugency-> {{
+              task.pxUrgencyAssign
+            }}"
+          >
+            <i
+              class="material-icons md-18  vertical-align-middle padding-bottom-3"
+              [ngStyle]="{ color: calcColor(task.pxUrgencyAssign) }"
+            >
+              lens
+            </i>
           </div>
-          <div fxFlex="65" fxLayoutAlign="start center" >
-          <div fxLayout="column"  matTooltip="{{task.TaskType}} - {{task.pxRefObjectInsName}} &#10;  Status -- {{task.pyAssignmentStatus}}" >
-            <div fxFlex class='text-menu'>{{ task.pyLabel }}</div>
-            <div fxFlex class='text-caption'>{{ task.pxTaskLabel }}</div>
+          <div fxFlex="65" fxLayoutAlign="start center">
+            <div
+              fxLayout="column"
+              matTooltip="{{ task.TaskType }} - {{
+                task.pxRefObjectInsName
+              }} &#10;  Status -- {{ task.pyAssignmentStatus }}"
+            >
+              <div fxFlex class="text-menu">{{ task.pyLabel }}</div>
+              <div fxFlex class="text-caption">{{ task.pxTaskLabel }}</div>
+            </div>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="end">
+            <div fxLayout="column">
+              <div fxFlex class="text-menu">{{ task.pyAssignmentStatus }}</div>
+              <div fxFlex class="caption">
+                <font size="-3"
+                  >Due: {{ task.pxDeadlineTime | date: short }}</font
+                >
+              </div>
+            </div>
           </div>
         </div>
-          <div fxLayout="row"  fxLayoutAlign="end">
-              <div fxLayout="column">
-                  <div fxFlex class='text-menu'>{{task.pyAssignmentStatus}}</div>
-                   <div fxFlex class='caption'><font size="-3">Due: {{ task.pxDeadlineTime | date:short}}</font></div>
-                </div>
-          </div>
-          <!-- <i class="material-icons green">
-                mood
-              </i>
-              Overall account status -->
-        </div>
-        <!-- <div fxLayout="row"  fxLayoutAlign="end">
-            <div fxFlex class='caption'><font size="-3">Due: {{ task.pxDeadlineTime | date:short }}</font></div>
-        </div> -->
       </mat-card-content>
     </mat-card>
   </div>
+</div> -->
+
+<div>
+    <div >
+        <!-- items being paged -->
+        <div *ngFor="let task of pagedItems">
+
+            <mat-card class="mat-card">
+                <mat-card-content>
+                  <div fxLayout="row" fxLayoutAlign="start center">
+                    <div
+                      fxFlex="36px"
+                      matTooltip="{{ task.pyAssignmentStatus }} -- Ugency-> {{
+                        task.pxUrgencyAssign
+                      }}"
+                    >
+                      <i
+                        class="material-icons md-18  vertical-align-middle padding-bottom-3"
+                        [ngStyle]="{ color: calcColor(task.pxUrgencyAssign) }"
+                      >
+                        lens
+                      </i>
+                    </div>
+                    <div fxFlex="65" fxLayoutAlign="start center">
+                      <div
+                        fxLayout="column"
+                        matTooltip="{{ task.TaskType }} - {{
+                          task.pxRefObjectInsName
+                        }} &#10;  Status -- {{ task.pyAssignmentStatus }}"
+                      >
+                        <div fxFlex class="text-menu">{{ task.pyLabel }}</div>
+                        <div fxFlex class="text-caption">{{ task.pxTaskLabel }}</div>
+                      </div>
+                    </div>
+                    <div fxLayout="row" fxLayoutAlign="end">
+                      <div fxLayout="column">
+                        <div fxFlex class="text-menu">{{ task.pyAssignmentStatus }}</div>
+                        <div fxFlex class="caption">
+                          <font size="-3"
+                            >Due: {{ task.pxDeadlineTime | date: short }}</font
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </mat-card-content>
+              </mat-card>
+        </div>
+
+        <!-- pager -->
+         <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(1)">First</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === 1}">
+                <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+            </li>
+            <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                <a (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.currentPage + 1)">Next</a>
+            </li>
+            <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                <a (click)="setPage(pager.totalPages)">Last</a>
+            </li>
+        </ul>
+    </div>
 </div>
-
-<!-- <table mat-table [dataSource]="unifiedtasklist$" matSort>
-
-      <ng-container matColumnDef="pxRefObjectInsName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Case</th>
-          <td mat-cell *matCellDef="let work">{{work.pxRefObjectInsName}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="pyAssignmentStatus">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-        <td mat-cell *matCellDef="let work">{{work.pyAssignmentStatus}} </td>
-      </ng-container>
-
-      <ng-container matColumnDef="pyLabel">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
-        <td mat-cell *matCellDef="let work">{{work.pyLabel}} </td>
-      </ng-container>
-
-
-      <ng-container matColumnDef="pxUrgencyAssign">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>Urgency</th>
-        <td mat-cell *matCellDef="let work">{{work.pxUrgencyAssign}} </td>
-      </ng-container>
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="this.openAssignment(row)"></tr>
-    </table>
-
-    <mat-paginator [pageSizeOptions]="[10, 20, 50, 100, 500]" showFirstLastButtons></mat-paginator>
-  -->

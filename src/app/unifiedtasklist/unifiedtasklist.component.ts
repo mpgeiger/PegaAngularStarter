@@ -5,7 +5,7 @@ import { Subscription, Observable } from 'rxjs';
 import { HttpParams, HttpHeaders } from '@angular/common/http';
 import { OpenAssignmentService } from '../_messages/openassignment.service';
 import { RefreshWorkListService } from '../_messages/refreshworklist.service';
-
+import { PagerService } from '../_services/pager.service';
 
 
 
@@ -30,13 +30,22 @@ export class UnifiedtasklistComponent implements OnInit {
   message: any;
   subscription: Subscription;
 
+
+    // array of all items to be paged
+    private allItems: any[];
+    // pager object
+    pager: any = {};
+    // paged items
+    pagedItems: any[];
+
   displayedColumns = ['pxRefObjectInsName', 'pyAssignmentStatus', 'pyLabel', 'pxUrgencyAssign'];
 
 
 
   constructor(private datapage: DatapageService,
               private oaservice: OpenAssignmentService,
-              private rwlservice: RefreshWorkListService) { }
+              private rwlservice: RefreshWorkListService,
+              private pagerService: PagerService) { }
 
   ngOnInit() {
 
@@ -48,6 +57,8 @@ export class UnifiedtasklistComponent implements OnInit {
 
      // if (this.message.unifiedtasklist === 'Work' || this.message.unifiedtasklist === 'unifiedtasklist') {
         this.getunifiedtasklist();
+
+
 
      // } else {
         // this.getWorkBaskets(this.message.unifiedtasklist);
@@ -82,6 +93,12 @@ export class UnifiedtasklistComponent implements OnInit {
         this.unifiedtasklist$.paginator = this.paginator;
         this.unifiedtasklist$.sort = this.sort;
 
+        this.allItems = this.tasks;
+
+        // initialize to page 1
+       this.setPage(0);
+
+
       },
       err => {
         alert('Error form unifiedtasklist:' + err.errors);
@@ -91,6 +108,15 @@ export class UnifiedtasklistComponent implements OnInit {
 
 
   }
+
+  setPage(page: number) {
+    // get pager object from service
+    this.pager = this.pagerService.getPager(this.allItems.length, page);
+
+    // get current page of items
+    this.pagedItems = this.allItems.slice(this.pager.startIndex, this.pager.endIndex + 1);
+}
+
   calcColor(val) {
     const maxval = 120;
     const minval = 3;
