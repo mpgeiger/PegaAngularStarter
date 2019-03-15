@@ -3,6 +3,7 @@ import { Component,  OnInit } from '@angular/core';
 import { GetLoginStatusService } from '../_messages/getloginstatus.service';
 import { Subscription, Observable } from 'rxjs';
 
+
 @Component({
   selector: 'app-accounts',
   templateUrl: './accounts.component.html',
@@ -10,8 +11,9 @@ import { Subscription, Observable } from 'rxjs';
 })
 export class AccountsComponent implements OnInit {
   bLoggedIn = false;
-  userName$: string = '';
+  userName$ = '';
   subscription: Subscription;
+  numUnifiedTaskList$ = '';
 
   constructor(private glsservice: GetLoginStatusService) { }
 
@@ -21,6 +23,9 @@ export class AccountsComponent implements OnInit {
       this.bLoggedIn = true;
 
       this.userName$ = localStorage.getItem('userFullName');
+       this.numUnifiedTaskList$ = localStorage.getItem('numUnifiedTaskList');
+      // this.numUnifiedTaskList$ = '11';
+
     }
 
     this.subscription = this.glsservice.getMessage().subscribe(

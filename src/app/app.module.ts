@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { MatButtonModule,
   MatCheckboxModule,
   MatFormFieldModule,
@@ -28,7 +29,8 @@ import { MatButtonModule,
   MatNativeDateModule,
   MatRadioModule,
   MatAutocompleteModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatBadgeModule
 
  } from '@angular/material';
 
@@ -81,6 +83,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UnifiedtasklistComponent } from './unifiedtasklist/unifiedtasklist.component';
 import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpanelsection.component';
+
 
 
 
@@ -143,6 +146,7 @@ import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpa
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatBadgeModule,
     MatButtonModule,
     MatCheckboxModule,
     MatFormFieldModule,
@@ -170,6 +174,7 @@ import { WorklistpanelsectionComponent } from './worklistpanelsection/worklistpa
     MatTooltipModule,
   ],
   exports: [
+    MatBadgeModule,
     MatButtonModule,
     MatButtonModule
   ],

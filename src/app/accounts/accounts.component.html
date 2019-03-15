@@ -21,14 +21,14 @@
 
   </mat-card-header>
     <mat-card-content>
-      <div class="row align-items-center">
-        <i class="material-icons green">
-          mood
-        </i>
-        Overall account status
+        <mat-list>
+            <mat-list-item><span matBadge="{{numUnifiedTaskList$}}" matBadgeColor="warn" matBadgeOverlap="false"  matBadgePosition="above before" matbadgeSize='medium'>  Open Tasks </span></mat-list-item>
+            <mat-list-item><span matBadge="{{numUnifiedTaskList$}}" matBadgeColor="warn" matBadgeOverlap="false"  matBadgePosition="above before" matbadgeSize='medium'>  Open Tasks </span></mat-list-item>
+            <mat-list-item>
+              <i class="material-icons green">mood</i>
+              Overall account status</mat-list-item>
+           </mat-list>
 
-        <div class="material-label mdl-badge" data-badge="4">Inbox</div>
-      </div>
     </mat-card-content>
   </mat-card>
   <!-- <div mat-card-avatar class="material-label mdl-badge" data-badge="4">xxxxxxxxx</div> -->
@@ -37,7 +37,8 @@
   <mat-card fxFlex="120" class="pgCard">
     <mat-card-header>
 
-    <mat-card-title>Open Tasks  <mat-icon style="padding: 0px 10px 0px 20px;">home</mat-icon> </mat-card-title>
+    <mat-card-title><span matBadge="{{numUnifiedTaskList$}}" matBadgeColor="warn" matBadgeOverlap="false">Open Tasks </span>
+    </mat-card-title>
   </mat-card-header>
     <mat-card-content>
       <app-unifiedtasklist></app-unifiedtasklist>

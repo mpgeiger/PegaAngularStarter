@@ -12,20 +12,26 @@
           <!-- {{calcColor(task.pxUrgencyAssign)}}--
             {{ task.pxUrgencyAssign }} -->
           </div>
-          <div fxFlex="75" fxLayoutAlign="start center" >
+          <div fxFlex="65" fxLayoutAlign="start center" >
           <div fxLayout="column"  matTooltip="{{task.TaskType}} - {{task.pxRefObjectInsName}} &#10;  Status -- {{task.pyAssignmentStatus}}" >
             <div fxFlex class='text-menu'>{{ task.pyLabel }}</div>
             <div fxFlex class='text-caption'>{{ task.pxTaskLabel }}</div>
           </div>
         </div>
           <div fxLayout="row"  fxLayoutAlign="end">
-            {{task.pyAssignmentStatus}}
+              <div fxLayout="column">
+                  <div fxFlex class='text-menu'>{{task.pyAssignmentStatus}}</div>
+                   <div fxFlex class='caption'><font size="-3">Due: {{ task.pxDeadlineTime | date:short}}</font></div>
+                </div>
           </div>
           <!-- <i class="material-icons green">
                 mood
               </i>
               Overall account status -->
         </div>
+        <!-- <div fxLayout="row"  fxLayoutAlign="end">
+            <div fxFlex class='caption'><font size="-3">Due: {{ task.pxDeadlineTime | date:short }}</font></div>
+        </div> -->
       </mat-card-content>
     </mat-card>
   </div>

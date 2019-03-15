@@ -92,13 +92,13 @@ export class UnifiedtasklistComponent implements OnInit {
 
   }
   calcColor(val) {
-    var maxval = 120;
-    var minval = 3;
+    const maxval = 120;
+    const minval = 3;
     // var val = 100;
-    var moreisgood = false;
+    let moreisgood = false;
 
-    var intnsty = (val - minval) / (maxval - minval);
-    var r, g;
+    let intnsty = (val - minval) / (maxval - minval);
+    let r, g;
     if (moreisgood) {
         if (intnsty > 0.5) {
             g = 255;
@@ -108,7 +108,7 @@ export class UnifiedtasklistComponent implements OnInit {
             g = Math.round(2 * intnsty * 255);
         }
 
-    } else { //lessisgood
+    } else { // lessisgood
         if (intnsty > 0.5) {
             r = 255;
             g = Math.round(2 * (1 - intnsty) * 255);
@@ -117,13 +117,13 @@ export class UnifiedtasklistComponent implements OnInit {
             r = Math.round(2 * intnsty * 255);
         }
     }
-    var rgb = "rgb(" + r.toString() + ", " + g.toString() + ", 0)";
-    return "" + rgb + "";
+    let rgb = 'rgb(' + r.toString() + ', ' + g.toString() + ', 0)';
+    return '' + rgb + '';
 
   }
 
   getMyStyles() {
-    let myStyles = {
+    const myStyles = {
        'color': 'red'
     };
     return myStyles;
@@ -136,7 +136,7 @@ export class UnifiedtasklistComponent implements OnInit {
 
 
   getResults(data) {
-
+    localStorage.setItem('numUnifiedTaskList', data.pxResults.length);
     return data.pxResults;
   }
 
